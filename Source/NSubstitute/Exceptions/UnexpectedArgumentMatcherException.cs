@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 
 namespace NSubstitute.Exceptions
 {
-    [Serializable]
+    [DataContract]
     public class UnexpectedArgumentMatcherException : SubstituteException
     {
         public static string WhatProbablyWentWrong =
@@ -15,6 +15,6 @@ namespace NSubstitute.Exceptions
             "  sub.MyMethod(\"hi\").Returns(Arg.Any<string>())";
         public UnexpectedArgumentMatcherException() : this(WhatProbablyWentWrong) { }
         public UnexpectedArgumentMatcherException(string message) : base(message) { }
-        protected UnexpectedArgumentMatcherException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+        //protected UnexpectedArgumentMatcherException(SerializationInfo info, StreamingContext context) : base(info, context) { }
     }
 }

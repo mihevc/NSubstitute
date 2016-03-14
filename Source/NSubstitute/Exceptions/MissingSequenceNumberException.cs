@@ -3,10 +3,10 @@ using System.Runtime.Serialization;
 
 namespace NSubstitute.Exceptions
 {
-    [Serializable]
+    [DataContract]
     public class MissingSequenceNumberException : SubstituteException
     {
         public MissingSequenceNumberException() { }
-        protected MissingSequenceNumberException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+        //protected MissingSequenceNumberException(SerializationInfo info, StreamingContext context) : base(info, context) { }
     }
 }

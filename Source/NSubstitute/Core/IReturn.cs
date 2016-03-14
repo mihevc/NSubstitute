@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using NSubstitute.Exceptions;
 
 namespace NSubstitute.Core
@@ -26,11 +27,11 @@ namespace NSubstitute.Core
         public ReturnValueFromFunc(Func<CallInfo, T> funcToReturnValue) { _funcToReturnValue = funcToReturnValue ?? ReturnNull(); }
         public object ReturnFor(CallInfo info) { return _funcToReturnValue(info); }
         public Type TypeOrNull() { return typeof (T); }
-        public bool CanBeAssignedTo(Type t) { return typeof (T).IsAssignableFrom(t); }
+        public bool CanBeAssignedTo(Type t) { return typeof (T).GetTypeInfo().IsAssignableFrom(t.GetTypeInfo()); }
 
         private static Func<CallInfo, T> ReturnNull()
         {
-            if (typeof(T).IsValueType) throw new CannotReturnNullForValueType(typeof(T));
+            if (typeof(T).GetTypeInfo().IsValueType) throw new CannotReturnNullForValueType(typeof(T));
             return x => default(T);
         }
     }

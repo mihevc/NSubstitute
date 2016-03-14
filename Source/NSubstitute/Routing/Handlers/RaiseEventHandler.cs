@@ -34,7 +34,7 @@ namespace NSubstitute.Routing.Handlers
                 }
                 catch (TargetInvocationException e)
                 {
-                    PreserveStackTrace(e.InnerException);
+                    //PreserveStackTrace(e.InnerException);
 
                     throw e.InnerException;
                 }
@@ -42,14 +42,14 @@ namespace NSubstitute.Routing.Handlers
             return RouteAction.Continue();
         }
 
-        private void PreserveStackTrace(Exception exception)
-        {
-            var context = new StreamingContext(StreamingContextStates.CrossAppDomain);
-            var serializationInfo = new SerializationInfo(typeof(Exception), new FormatterConverter());
-            var constructor = typeof(Exception).GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new[] { typeof(SerializationInfo), typeof(StreamingContext) }, null);
+        //private void PreserveStackTrace(Exception exception)
+        //{
+        //    var context = new StreamingContext(StreamingContextStates.CrossAppDomain);
+        //    var serializationInfo = new SerializationInfo(typeof(Exception), new FormatterConverter());
+        //    var constructor = typeof(Exception).GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new[] { typeof(SerializationInfo), typeof(StreamingContext) }, null);
 
-            exception.GetObjectData(serializationInfo, context);
-            constructor.Invoke(exception, new object[] { serializationInfo, context });
-        }
+        //    exception.GetObjectData(serializationInfo, context);
+        //    constructor.Invoke(exception, new object[] { serializationInfo, context });
+        //}
     }
 }

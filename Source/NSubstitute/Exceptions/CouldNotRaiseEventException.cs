@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 
 namespace NSubstitute.Exceptions
 {
-    [Serializable]
+    [DataContract]
     public class CouldNotRaiseEventException : SubstituteException
     {
         protected const string WhatProbablyWentWrong =
@@ -22,6 +22,6 @@ namespace NSubstitute.Exceptions
             "\tsub.Load(); // <-- Exception thrown here. NSubstitute thinks the earlier Raise.Event() was meant for this call.";
 
         public CouldNotRaiseEventException() : base(WhatProbablyWentWrong) { }
-        protected CouldNotRaiseEventException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+        //protected CouldNotRaiseEventException(SerializationInfo info, StreamingContext context) : base(info, context) { }
     }
 }

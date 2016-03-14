@@ -3,10 +3,10 @@ using System.Runtime.Serialization;
 
 namespace NSubstitute.Exceptions
 {
-    [Serializable]
+    [DataContract]
     public class ArgumentNotFoundException : SubstituteException
     {
         public ArgumentNotFoundException(string message) : base(message) { }
-        protected ArgumentNotFoundException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+        //protected ArgumentNotFoundException(SerializationInfo info, StreamingContext context) : base(info, context) { }
     }
 }

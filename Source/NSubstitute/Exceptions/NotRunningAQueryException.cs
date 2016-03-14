@@ -3,10 +3,10 @@ using System.Runtime.Serialization;
 
 namespace NSubstitute.Exceptions
 {
-    [Serializable]
+    [DataContract]
     public class NotRunningAQueryException : SubstituteException
     {
         public NotRunningAQueryException() { }
-        protected NotRunningAQueryException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+        //protected NotRunningAQueryException(SerializationInfo info, StreamingContext context) : base(info, context) { }
     }
 }

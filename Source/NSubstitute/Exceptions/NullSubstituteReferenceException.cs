@@ -3,10 +3,10 @@ using System.Runtime.Serialization;
 
 namespace NSubstitute.Exceptions
 {
-    [Serializable]
+    [DataContract]
     public class NullSubstituteReferenceException : NotASubstituteException 
     {
         public NullSubstituteReferenceException() { }
-        protected NullSubstituteReferenceException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+        //protected NullSubstituteReferenceException(SerializationInfo info, StreamingContext context) : base(info, context) { }
     }
 }

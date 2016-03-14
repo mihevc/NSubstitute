@@ -94,7 +94,7 @@ namespace NSubstitute.Acceptance.Specs
 
         [Test]
         [Ignore("Long running, non-deterministic test.")]
-        [Timeout(60 * 1000)]
+        //[Timeout(60 * 1000)]
         public void Create_Delegate_Substitute_From_Many_Threads()
         {
             var tasks =

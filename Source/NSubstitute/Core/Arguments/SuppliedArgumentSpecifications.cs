@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 namespace NSubstitute.Core.Arguments
 {
@@ -54,7 +55,7 @@ namespace NSubstitute.Core.Arguments
 
         private bool AreTypesCompatible(Type argumentType, Type typeArgSpecIsFor)
         {
-            return argumentType.IsAssignableFrom(typeArgSpecIsFor) ||
+            return argumentType.GetTypeInfo().IsAssignableFrom(typeArgSpecIsFor.GetTypeInfo()) ||
                 (argumentType.IsByRef && !typeArgSpecIsFor.IsByRef && argumentType.IsAssignableFrom(typeArgSpecIsFor.MakeByRefType()));
         }
     }
