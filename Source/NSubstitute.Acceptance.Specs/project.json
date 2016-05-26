@@ -2,27 +2,28 @@
   "version": "1.0.0-*",
   "description": "NSubstitute",
   "authors": [ "Mihevc" ],
-  "tags": [ "" ],
-  "projectUrl": "",
-  "licenseUrl": "",
   "frameworks": {
-    "dnxcore50": {
-      "dependencies": {
-        "System.Threading.Thread": "4.0.0-beta-23516"
-      }
+    "netcoreapp1.0": {
+      "imports": [
+        "dotnet5.6",
+        "dnxcore50",
+        "portable-net45+win8"
+      ]
     }
   },
   "commands": {
     "NSubstitute.Acceptance.Specs": "NSubstitute.Acceptance.Specs"
   },
   "dependencies": {
-    "NSubstitute": "1.0.0-*",
-    "NUnit": "3.2.0",
-    "NUnitLite": "3.2.0",
+    "Microsoft.NETCore.App": {
+      "version": "1.0.0-rc2-3002702",
+      "type": "platform"
+    },
+    "NSubstitute": "1.1.0-*",
+    "NUnitLite": "3.2.1"
   },
-  "exclude": [
-  ],
-  "compilationOptions": {
-    "define": ["COREFX"]
+  "buildOptions": {
+    "define": [ "COREFX" ],
+    "emitEntryPoint": true
   }
 }

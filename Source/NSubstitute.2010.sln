@@ -1,13 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1881DE2A-CEA3-4C69-966D-95A1F08D68E1}"
 	ProjectSection(SolutionItems) = preProject
 		..\BreakingChanges.txt = ..\BreakingChanges.txt
 		..\CHANGELOG.txt = ..\CHANGELOG.txt
-		NSubstitute\global.json = NSubstitute\global.json
 	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NSubstitute", "NSubstitute\NSubstitute.xproj", "{4815E305-470B-4880-95EA-3EB5FD36EDEF}"
