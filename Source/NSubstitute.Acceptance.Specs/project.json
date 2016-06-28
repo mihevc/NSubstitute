@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0-*",
+  "version": "3.0.0-*",
   "description": "NSubstitute",
   "authors": [ "Mihevc" ],
   "frameworks": {
@@ -16,10 +16,10 @@
   },
   "dependencies": {
     "Microsoft.NETCore.App": {
-      "version": "1.0.0-rc2-3002702",
+      "version": "1.0.0",
       "type": "platform"
     },
-    "NSubstitute": "1.1.0-*",
+    "NSubstitute": "3.0.0-*",
     "NUnitLite": "3.2.1"
   },
   "buildOptions": {
